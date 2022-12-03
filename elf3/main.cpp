@@ -74,8 +74,8 @@ int main()
 {
   cout<<"Hello World\n";
   
-  // string filename("test_input_file");
-  string filename("input_file");
+  string filename("test_input_file");
+  // string filename("input_file");
   vector<Rucksack_t> elves_rucksacks_vector;
   ifstream input_file(filename);
   
