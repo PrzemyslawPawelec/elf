@@ -1,0 +1,1 @@
+g++ -std=c++20 -o elf3 main.cpp && clear && ./elf3
