@@ -33,7 +33,6 @@ int main()
     vector<Rucksack_t> elves_rucksacks_vector;
     ifstream input_file(filename);
     
-    char weapon{};
     string line{};
     stringstream ss;
     
@@ -46,12 +45,28 @@ int main()
     
     while (getline(input_file, line, '\n'))
     {
-        cout << "->" << line.at(0) << endl;
-        ss << line;
-        // ss >> single_battle.oponent_weapon;
-        // ss >> single_battle.my_weapon;
-        
+      vector<char> items;
+      cout << "->" << line.at(0) << endl;
+      // ss << line;
 
+      
+      // boost::transform(names | filtered([](std::string const& s) { return s != "bad"; }),
+      //                std::inserter(first_to_last_name_map, first_to_last_name_map.begin()),
+      //                [](std::string const& s) { return std::make_pair(s, s); });
+      // namespace views = std::ranges::views;
+      // vec | views::filter([](int a){ return a % 2 == 0; })
+     // std::ranges::views::transform
+      // std::transform( line | std::views::filter([](unsigned char c){return std::isalpha(c);}), );
+
+      // for (int i : std::views::iota(0, 6)
+      //          | std::views::filter(even)
+      //          | std::views::transform(square)) {
+      //   std::cout << i << ' ';
+        
+      
+        // line.cbegin(), line.cend(), 
+        //            s.begin(), // write to the same location
+        //            [](unsigned char c) { return std::toupper(c); });
     }
     
     input_file.close();

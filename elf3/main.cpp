@@ -33,7 +33,6 @@ int main()
     vector<Rucksack_t> elves_rucksacks_vector;
     ifstream input_file(filename);
     
-    char weapon{};
     string line{};
     stringstream ss;
     
@@ -46,12 +45,19 @@ int main()
     
     while (getline(input_file, line, '\n'))
     {
-        cout << "->" << line.at(0) << endl;
-        ss << line;
-        // ss >> single_battle.oponent_weapon;
-        // ss >> single_battle.my_weapon;
+      vector<char> items;
+      // cout << "->" << line.at(0) << endl;
+      // ss << line;
+      
+      std::ranges::copy( line | std::views::filter([](unsigned char c){return std::isalpha(c);})
+                              | std::views::transform([](unsigned char c){return static_cast<char>(c);}), 
+                                std::back_inserter(items) );
         
-
+      // cout << "sizeof items: " << items.size() << endl;
+      if (items.size() % 2 != 0)
+      {
+        cout << "ODD!" << endl;
+      }
     }
     
     input_file.close();
